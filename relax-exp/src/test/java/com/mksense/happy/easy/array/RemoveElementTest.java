@@ -21,5 +21,6 @@ public class RemoveElementTest {
     RemoveElement re = new RemoveElement();
 
     assertEquals(5, re.removeElement(nums, val));
+    System.out.println(Arrays.toString(nums));
   }
 }

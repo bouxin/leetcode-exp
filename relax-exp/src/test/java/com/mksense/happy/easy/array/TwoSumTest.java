@@ -1,7 +1,5 @@
 package com.mksense.happy.easy.array;
 
-import com.mksense.happy.exceptions.SatisfyException;
-import org.junit.Assert;
 import org.junit.Test;
 
 /**
@@ -30,8 +28,8 @@ public class TwoSumTest {
 
     try{
       sum.twoSum(nums, target);
-    } catch (RuntimeException ex) {
-      if (ex instanceof SatisfyException) {
+    } catch (Throwable ex) {
+      if (ex instanceof RuntimeException) {
         // do nothing
       } else {
         assert false;
