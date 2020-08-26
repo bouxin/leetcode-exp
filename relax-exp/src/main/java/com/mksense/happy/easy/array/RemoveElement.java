@@ -1,6 +1,5 @@
 package com.mksense.happy.easy.array;
 
-import java.util.Arrays;
 
 /**
  * Given an array nums and a value val, remove all instances of that value in-place
@@ -49,4 +48,19 @@ public class RemoveElement {
     return current;
 	}
 
+
+	public int removeElement2(int[] nums, int val) {
+		int current = 0;
+
+    for (int i = 0; i < nums.length; i++) {
+    	if (nums[i] != val) {
+		    int temp = nums[current];
+		    nums[current] = nums[i];
+		    nums[i] = temp;
+    		current++;
+	    }
+    }
+
+    return current;
+	}
 }
