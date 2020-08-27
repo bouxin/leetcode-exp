@@ -20,7 +20,7 @@ public class TwoSumTest {
   }
 
   @Test
-  public void twoSum_throwSatisfyEx() {
+  public void twoSum_throwEx() {
     int[] nums = new int[] { 2, 7, 11, 15 };
     int target = 10;
 
