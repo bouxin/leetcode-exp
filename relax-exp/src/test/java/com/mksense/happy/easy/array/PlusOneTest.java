@@ -18,6 +18,6 @@ public class PlusOneTest {
     int[] excepted = new int[] { 1, 0 };
     PlusOne po = new PlusOne();
 
-    assertEquals(Arrays.toString(excepted), Arrays.toString(po.plusOne(digits)));
+    assertEquals(Arrays.toString(excepted), Arrays.toString(po.plusOne2(digits)));
   }
 }
