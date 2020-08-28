@@ -1,5 +1,7 @@
 package com.mksense.happy.easy.array;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.SortedSet;
 import java.util.TreeSet;
@@ -31,38 +33,26 @@ public class MergeSortedArray {
 
 	public void merge(int[] nums1, int m, int[] nums2, int n) {
     System.arraycopy(nums2, 0, nums1, m, n);
-
-		bubbleSort(nums1);
+    Arrays.sort(nums1);
 	}
 
-	public void bubbleSort(int[] nums) {
-		for (int i = 0; i < nums.length; i++) {
-			for (int j = i + 1; j < nums.length; j++) {
-				if (nums[i] > nums[j]) {
-					int temp = nums[i];
-					nums[i] = nums[j];
-					nums[j] = temp;
-				}
-			}
-		}
-	}
 
 	public void merge2(int[] nums1, int m, int[] nums2, int n) {
+		if (n <= 0) {
+			return;
+		}
+
 		for (int i = m + n - 1; i >= 0; i--) {
-			if (m == 0 && n > 0) {
+			if (m == 0) {
 				nums1[i] = nums2[--n];
-			}
-
-			if (n == 0) {
-				return;
-			}
-
-			if (m > 0 && n > 0) {
+			} else if (m > 0 && n > 0){
 				if (nums1[m - 1] < nums2[n - 1]) {
 					nums1[i] = nums2[--n];
 				} else {
 					nums1[i] = nums1[--m];
 				}
+			} else {
+				// do nothing
 			}
 		}
 	}
