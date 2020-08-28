@@ -12,7 +12,7 @@ import org.junit.Test;
 public class SearchInsertPositionTest {
 
   @Test
-  public void searchInsert_right_output() {
+  public void test_searchInsert_expectTargetValueRightInserted() {
     int[] nums = new int[] { 1, 3, 5, 7, 8, 10 };
     int target = 11;
 

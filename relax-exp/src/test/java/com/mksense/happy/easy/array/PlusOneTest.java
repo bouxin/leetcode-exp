@@ -13,11 +13,11 @@ import org.junit.Test;
 public class PlusOneTest {
 
   @Test
-  public void plusOne() {
+  public void test_plusOne_expectRightReturned() {
     int[] digits = new int[] { 9 };
-    int[] excepted = new int[] { 1, 0 };
+    int[] expected = new int[] { 1, 0 };
     PlusOne po = new PlusOne();
 
-    assertEquals(Arrays.toString(excepted), Arrays.toString(po.plusOne2(digits)));
+    assertEquals(Arrays.toString(expected), Arrays.toString(po.plusOne2(digits)));
   }
 }

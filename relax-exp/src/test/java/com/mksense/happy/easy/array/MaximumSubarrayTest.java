@@ -12,7 +12,7 @@ import org.junit.Test;
 public class MaximumSubarrayTest {
 
   @Test
-  public void maxSubarray_right_output() {
+  public void test_maxSubarray_expectRightExecuted() {
     int[] nums = new int[] { -2, -1 };
 
     MaximumSubarray ms = new MaximumSubarray();

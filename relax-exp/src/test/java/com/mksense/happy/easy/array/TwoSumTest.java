@@ -1,5 +1,8 @@
 package com.mksense.happy.easy.array;
 
+import static org.junit.Assert.assertEquals;
+
+import java.util.Arrays;
 import org.junit.Test;
 
 /**
@@ -10,17 +13,21 @@ import org.junit.Test;
 public class TwoSumTest {
 
   @Test
-  public void twoSum_rightOutput() {
-    int[] nums = new int[] { 2, 7, 11, 15 };
+  public void test_twoSum_expectRightIndexPairReturned() {
     int target = 9;
+    int[] nums = new int[] { 2, 7, 11, 15 };
+
+    int[] expected = new int[] { 0, 1 };
 
     TwoSum sum = new TwoSum();
 
-    sum.twoSum(nums, target);
+    int[] result = sum.twoSum(nums, target);
+
+    assertEquals(Arrays.toString(expected), Arrays.toString(result));
   }
 
   @Test
-  public void twoSum_throwEx() {
+  public void test_twoSum_expectThrowException() {
     int[] nums = new int[] { 2, 7, 11, 15 };
     int target = 10;
 

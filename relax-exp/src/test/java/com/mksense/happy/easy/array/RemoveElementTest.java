@@ -14,7 +14,7 @@ import org.junit.Test;
 public class RemoveElementTest {
 
   @Test
-  public void removeElement_right_output() {
+  public void test_removeElement_expectTargetValueRemoved() {
     int[] nums = new int[] { 0,1,2,2,2,3,0,4,2 };
     int val = 2;
 

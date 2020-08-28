@@ -14,7 +14,7 @@ import org.junit.Test;
 public class RemoveDuplicatesFromSortedArrayTest {
 
   @Test
-  public void removeDuplicates_right_output() {
+  public void test_removeDuplicates_expectDuplicatesRemoved() {
     int[] nums = new int[] { 0, 0, 1, 1, 1, 2, 2, 2, 3, 3, 4 };
     HashSet<Integer> set = putAllToHashSet(nums);
 
