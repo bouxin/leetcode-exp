@@ -33,9 +33,8 @@ package com.mksense.happy.easy.array;
 public class PlusOne {
 
 	public int[] plusOne(int[] digits) {
-		int ten = 10;
     for (int i = digits.length - 1; i >= 0;) {
-	    if (digits[i] + 1 == ten) {
+	    if (digits[i] == 9) {
 		    digits[i] = 0;
 
 		    if (i == 0) {
@@ -47,8 +46,8 @@ public class PlusOne {
 		    }
 		    i--;
 	    } else {
-		    digits[i] += 1;
-		    break;
+		    digits[i]++;
+				break;
 	    }
     }
 
@@ -67,7 +66,8 @@ public class PlusOne {
 
     // running here, we know all the original digits elements is 9
     // now all the digits elements now should be 0
-		// just new an array with initialized elements 0 filled there
+		// just new an <code>digits.length + 1</code> array
+		// with initialized elements 0 filled there
 		// change the first element to 1
     int[] nums = new int[digits.length + 1];
     nums[0] = 1;
