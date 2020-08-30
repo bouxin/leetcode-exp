@@ -18,6 +18,6 @@ public class BestTimeToBuyAndSellStockTest {
 
     BestTimeToBuyAndSellStock bttbass = new BestTimeToBuyAndSellStock();
 
-    assertEquals(expected, bttbass.maxProfit(prices));
+    assertEquals(expected, bttbass.maxProfit2(prices));
   }
 }
