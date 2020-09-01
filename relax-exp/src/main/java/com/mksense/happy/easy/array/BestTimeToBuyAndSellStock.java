@@ -34,10 +34,6 @@ public class BestTimeToBuyAndSellStock {
 			return 0;
 		}
 
-		if (prices.length == 2) {
-			return prices[1] > prices[0] ? prices[1] - prices[0] : 0;
-		}
-
 		int maxProfit = 0;
 		int tempProfit = 0;
 
@@ -54,10 +50,6 @@ public class BestTimeToBuyAndSellStock {
 	public int maxProfit2(int[] prices) {
 		if (prices.length <= 1) {
 			return 0;
-		}
-
-		if (prices.length == 2) {
-			return prices[1] > prices[0] ? prices[1] - prices[0] : 0;
 		}
 
 		int maxProfit = 0;
