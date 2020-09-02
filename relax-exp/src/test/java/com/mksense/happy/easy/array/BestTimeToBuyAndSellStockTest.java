@@ -13,11 +13,14 @@ public class BestTimeToBuyAndSellStockTest {
 
   @Test
   public void test_maxProfit_expectPass() {
-    int[] prices = new int[] { 7,1,5,3,6,4 };
-    int expected = 5;
+//    int[] prices = new int[] { 7,6,4,3,1 };
+//    int[] prices = new int[] { 1, 2, 3, 4, 5, 6 };
+//    int[] prices = new int[] { 6, 5, 4, 3, 2, 1 };
+    int[] prices = new int[] { 7, 3, 8, 5, 9, 1 };
+    int expected = 6;
 
     BestTimeToBuyAndSellStock bttbass = new BestTimeToBuyAndSellStock();
 
-    assertEquals(expected, bttbass.maxProfit2(prices));
+    assertEquals(expected, bttbass.maxProfit3(prices));
   }
 }
