@@ -30,12 +30,7 @@ import java.util.HashSet;
 public class BestTimeToBuyAndSellStock {
 
 	public int maxProfit(int[] prices) {
-		if (prices.length <= 1) {
-			return 0;
-		}
-
-		int maxProfit = 0;
-		int tempProfit = 0;
+		int maxProfit = 0, tempProfit = 0;
 
 		for (int i = 0; i < prices.length - 1; i++) {
       for (int j = i + 1; j < prices.length; j++) {
@@ -44,33 +39,32 @@ public class BestTimeToBuyAndSellStock {
       }
     }
 
-    return maxProfit > 0 ? maxProfit : 0;
+    return maxProfit;
 	}
 
 	public int maxProfit2(int[] prices) {
-		if (prices.length <= 1) {
-			return 0;
-		}
-
-		int maxProfit = 0;
-		int minPrice = prices[0];
+		int maxProfit = 0, minPrice = prices[0];
 
 		for(int i = 0; i < prices.length; i++) {
 			minPrice = Math.min(prices[i], minPrice);
 			maxProfit = Math.max(maxProfit, prices[i] - minPrice);
 		}
 
-    return maxProfit > 0 ? maxProfit : 0;
+    return maxProfit;
 	}
 
 	public int maxProfit3(int[] prices) {
-		int maxCur = 0, maxSoFar = 0;
+		if (prices.length <= 1) {
+			return 0;
+		}
+
+		int maxCur = 0, maxProfit = 0;
 
 		for(int i = 1; i < prices.length; i++) {
 			maxCur = Math.max(0, maxCur += prices[i] - prices[i-1] );
-			maxSoFar = Math.max(maxCur, maxSoFar);
+			maxProfit = Math.max(maxCur, maxProfit);
 		}
 
-		return maxSoFar;
+		return maxProfit;
 	}
 }
