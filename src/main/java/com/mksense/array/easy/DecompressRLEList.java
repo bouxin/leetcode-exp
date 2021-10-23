@@ -43,13 +43,14 @@ public class DecompressRLEList {
 
     public int[] decompressRLEList(final int[] nums) {
         // num must appears in pairs
-        if (nums.length < 2) {
+        if (nums.length < 2 || nums.length > 100 || nums.length % 2 != 0) {
             throw new RuntimeException();
         }
-        // given array nums all in pairs, so we can get the new compressed array max length,
+        // the given array nums always in pairs, so we can get the new compressed array max length,
         // just sum the nums[i] index follow 1, 3, 5, ..... i + 2 within nums.length.
         int arrayLen = 0;
         for (int i = 0; i < nums.length; i += 2) {
+            if (nums[i] < 1 || nums[i] > 100) throw new RuntimeException();
             arrayLen += nums[i];
         }
         // last filled array index
