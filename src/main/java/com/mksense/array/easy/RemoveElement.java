@@ -1,4 +1,4 @@
-package com.mksense.happy.easy.array;
+package com.mksense.array.easy;
 
 
 /**
@@ -30,7 +30,7 @@ package com.mksense.happy.easy.array;
  * <p>It doesn't matter what values are set beyond the returned length.
  *
  * @author lubosson
- * @see com.mksense.happy.easy.array
+ * 
  * @since 2020-08-24
  */
 public class RemoveElement {

@@ -1,7 +1,4 @@
-package com.mksense.happy.easy.array;
-
-import java.util.HashMap;
-import java.util.HashSet;
+package com.mksense.array.easy;
 
 /**
  * Say you have an array for which the ith element is the price
@@ -24,22 +21,29 @@ import java.util.HashSet;
  * no transaction is done, i.e. max profit = 0.
  *
  * @author lubosson
- * @see com.mksense.happy.easy.array
+ * 
  * @since 2020-08-29
  */
 public class BestTimeToBuyAndSellStock {
+
+	public static void main(String[] args) {
+		BestTimeToBuyAndSellStock btbss = new BestTimeToBuyAndSellStock();
+		int[] prices = { 7, 2, 6, 8, 11, 7 };
+		int expected = 9;
+
+		System.out.println(btbss.maxProfit(prices) == expected);
+	}
 
 	public int maxProfit(int[] prices) {
 		int maxProfit = 0, tempProfit = 0;
 
 		for (int i = 0; i < prices.length - 1; i++) {
-      for (int j = i + 1; j < prices.length; j++) {
-	      tempProfit = prices[j] - prices[i];
-    	  maxProfit = Math.max(maxProfit, tempProfit);
-      }
-    }
-
-    return maxProfit;
+			for (int j = i + 1; j < prices.length; j++) {
+				tempProfit = prices[j] - prices[i];
+				maxProfit = Math.max(maxProfit, tempProfit);
+			}
+    	}
+		return maxProfit;
 	}
 
 	public int maxProfit2(int[] prices) {
@@ -49,8 +53,7 @@ public class BestTimeToBuyAndSellStock {
 			minPrice = Math.min(prices[i], minPrice);
 			maxProfit = Math.max(maxProfit, prices[i] - minPrice);
 		}
-
-    return maxProfit;
+		return maxProfit;
 	}
 
 	public int maxProfit3(int[] prices) {

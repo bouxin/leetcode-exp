@@ -1,4 +1,4 @@
-package com.mksense.happy.easy.array;
+package com.mksense.array.easy;
 
 /**
  * Given a non-empty array of digits representing a non-negative integer,
@@ -27,7 +27,7 @@ package com.mksense.happy.easy.array;
  * <p>1 <= digits.length <= 100 0 <= digits[i] <= 9
  *
  * @author lubosson
- * @see com.mksense.happy.easy.array
+ * 
  * @since 2020-08-27
  */
 public class PlusOne {

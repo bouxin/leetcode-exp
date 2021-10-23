@@ -1,4 +1,4 @@
-package com.mksense.happy.easy.array;
+package com.mksense.array.easy;
 
 /**
  * Given an integer array nums, find the contiguous subarray (containing
@@ -14,7 +14,7 @@ package com.mksense.happy.easy.array;
  * using the divide and conquer approach, which is more subtle.
  *
  * @author lubosson
- * @see com.mksense.happy.easy.array
+ * 
  * @since 2020-08-26
  */
 public class MaximumSubarray {

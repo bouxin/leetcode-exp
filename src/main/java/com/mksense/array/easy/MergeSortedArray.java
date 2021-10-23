@@ -1,4 +1,4 @@
-package com.mksense.happy.easy.array;
+package com.mksense.array.easy;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
@@ -26,7 +26,7 @@ import java.util.TreeSet;
  * <p>-10^9 <= nums1[i], nums2[i] <= 10^9 nums1.length == m + n nums2.length == n
  *
  * @author lubosson
- * @see com.mksense.happy.easy.array
+ * 
  * @since 2020-08-27
  */
 public class MergeSortedArray {

@@ -1,4 +1,4 @@
-package com.mksense.happy.easy.array;
+package com.mksense.array.easy;
 
 /**
  * Given a sorted array and a target value, return the index if the target is found. If not, return
@@ -17,7 +17,7 @@ package com.mksense.happy.easy.array;
  * <p>Input: [1,3,5,6], 0 Output: 0
  *
  * @author lubosson
- * @see com.mksense.happy.easy.array
+ * 
  * @since 2020-08-26
  */
 public class SearchInsertPosition {

@@ -1,4 +1,4 @@
-package com.mksense.happy.easy.array;
+package com.mksense.array.easy;
 
 /**
  * Given a sorted array nums, remove the duplicates in-place such that each element
@@ -24,7 +24,7 @@ package com.mksense.happy.easy.array;
  * <p>It doesn't matter what values are set beyond the returned length.
  *
  * @author lubosson
- * @see com.mksense.happy.easy.array
+ * 
  * @since 2020-08-24
  */
 public class RemoveDuplicatesFromSortedArray {
@@ -34,41 +34,40 @@ public class RemoveDuplicatesFromSortedArray {
 			return 0;
 		}
 
-		int maxIndexLen = nums.length - 1;
 		int position = 0;
 		int i = 0;
 
-    while (i < maxIndexLen) {
-      if (nums[position] != nums[++i]) {
-				position++;
+		while (i < nums.length - 1) {
+			if (nums[position] != nums[++i]) {
+		  		position++;
 
-				if (position == i) {
-					continue;
-				}
-				nums[position] = nums[i];
-      }
-    }
+		  		if (position == i) {
+		  			continue;
+		  		}
+		  		nums[position] = nums[i];
+		  	}
+		}
 
-    return position + 1;
+		return position + 1;
 	}
 
-  public int removeDuplicates2(int[] nums) {
+	public int removeDuplicates2(int[] nums) {
 		if (nums.length == 0) {
 			return 0;
 		}
 
-    int position = 0;
+		int position = 0;
 
-    for (int i = 1; i < nums.length; i++) {
-      if (nums[position] != nums[i]) {
+		for (int i = 1; i < nums.length; i++) {
+			if (nums[position] != nums[i]) {
 				position++;
 				if (position == i) {
 					continue;
 				}
-      	nums[position] = nums[i];
-      }
-    }
+				nums[position] = nums[i];
+			}
+		}
 
-    return position + 1;
+		return position + 1;
 	}
 }

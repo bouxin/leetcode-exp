@@ -1,4 +1,4 @@
-package com.mksense.happy.easy.array;
+package com.mksense.array.easy;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
@@ -47,7 +47,7 @@ public class BestTimeToBuyAndSellStockII {
 		}
 
 		int maxProfitSoFar = 0;
-		int preMaxProfit = 0, postMaxProfit = 0;
+		int preMaxProfit, postMaxProfit;
 		for (int i = 1; i < prices.length; i++) {
 			preMaxProfit = maxProfit0(Arrays.copyOfRange(prices, 0, i));
 			postMaxProfit = maxProfit0(Arrays.copyOfRange(prices, i, prices.length));
@@ -65,10 +65,16 @@ public class BestTimeToBuyAndSellStockII {
 		int maxCur = 0, maxProfit = 0;
 
 		for(int i = 1; i < prices.length; i++) {
-			maxCur = Math.max(0, maxCur += prices[i] - prices[i-1] );
+			maxCur = Math.max(0, maxCur + (prices[i] - prices[i - 1]));
 			maxProfit = Math.max(maxCur, maxProfit);
 		}
 
 		return maxProfit;
+	}
+
+	public static void main(String[] args) {
+		int[] prices = { 1, 4, 8, 2, 9, 3, 6};
+		BestTimeToBuyAndSellStockII solution = new BestTimeToBuyAndSellStockII();
+		System.out.println(solution.maxProfit(prices));
 	}
 }

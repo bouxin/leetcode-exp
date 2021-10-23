@@ -1,4 +1,4 @@
-package com.mksense.happy.easy.array;
+package com.mksense.array.easy;
 
 import java.util.HashMap;
 
@@ -16,7 +16,7 @@ import java.util.HashMap;
  * <p>Because nums[0] + nums[1] = 2 + 7 = 9, return [0, 1].
  *
  * @author lubosson
- * @see com.mksense.happy.easy.array
+ * 
  * @since 2020-08-21
  */
 public class TwoSum {
