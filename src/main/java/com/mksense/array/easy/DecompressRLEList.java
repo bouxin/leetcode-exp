@@ -42,14 +42,19 @@ import java.util.stream.Stream;
 public class DecompressRLEList {
 
     public int[] decompressRLEList(final int[] nums) {
+        // num must appears in pairs
         if (nums.length < 2) {
             throw new RuntimeException();
         }
+        // given array nums all in pairs, so we can get the new compressed array max length,
+        // just sum the nums[i] index follow 1, 3, 5, ..... i + 2 within nums.length.
         int arrayLen = 0;
         for (int i = 0; i < nums.length; i += 2) {
             arrayLen += nums[i];
         }
-        int[] results = new int[arrayLen]; int cursor = 0;
+        // last filled array index
+        int cursor = 0;
+        int[] results = new int[arrayLen];
         for (int i = 0; i < nums.length; i += 2) {
             int freq = nums[i]; int value = nums[i+1];
             if (freq > 0) {
