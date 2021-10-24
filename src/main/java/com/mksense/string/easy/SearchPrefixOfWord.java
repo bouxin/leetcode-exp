@@ -51,12 +51,19 @@ package com.mksense.string.easy;
 public class SearchPrefixOfWord {
 
     public int isPrefixOfWord(final String sentence, final String searchWord) {
-        if (sentence == null || sentence.trim().length() == 0 || sentence.length() > 100) {
+        // We are not care of NPE problem
+        if (sentence.length() > 100 || sentence.length() < 1) {
             throw new RuntimeException();
         }
-        if (searchWord == null || searchWord.trim().length() == 0 || searchWord.length() > 10) {
+        if (searchWord.length() > 10 || searchWord.length() < 1) {
             throw new RuntimeException();
         }
+        /*
+        Here I use java.lang.String#split() to String array for comparing,
+        we could have another approach achieve it. Reading the sentence alphabet to char[]
+        compare with searchWord when reach a single space, so we can split time and String[]
+        space.
+         */
         String[] strings = sentence.trim().split(" ");
         for (int i = 0; i < strings.length; i++) {
             String s = strings[i];
