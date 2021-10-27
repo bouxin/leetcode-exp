@@ -31,13 +31,38 @@ package com.mksense.bit;
  */
 public class HammingDistance {
 
-    public int hammingDistance(final int x, final long y) {
-
-        return 1;
+    public int hammingDistance(final int x, final int y) {
+        String binaryX = Integer.toBinaryString(x);
+        String binaryY = Integer.toBinaryString(y);
+        int step = binaryX.length() - binaryY.length();
+        // make two number's binary array length equals
+        if (step < 0) {
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < -step; i++) {
+                sb.append(0);
+            }
+            binaryX = sb.append(binaryX).toString();
+        } else {
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < step; i++) {
+                sb.append(0);
+            }
+            binaryY = sb.append(binaryY).toString();
+        }
+        int distance = 0;
+        for (int i = 0; i < binaryY.length(); i++) {
+            char binx = binaryX.charAt(i);
+            char biny = binaryY.charAt(i);
+            if ((binx ^ biny) == 1) {
+                distance += 1;
+            }
+        }
+        return distance;
     }
 
     public static void main(String[] args) {
-        String i = Integer.toBinaryString(4);
+        HammingDistance solution = new HammingDistance();
+        System.out.println(solution.hammingDistance(4, 1));
     }
 
 }
