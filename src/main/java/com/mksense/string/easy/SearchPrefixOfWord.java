@@ -61,7 +61,7 @@ public class SearchPrefixOfWord {
         /*
         Here I use java.lang.String#split() to String array for comparing,
         we could have another approach achieve it. Reading the sentence alphabet to char[]
-        compare with searchWord when reach a single space, so we can split time and String[]
+        compare with searchWord when reach a single space, so we can save split time and String[]
         space.
          */
         String[] strings = sentence.trim().split(" ");

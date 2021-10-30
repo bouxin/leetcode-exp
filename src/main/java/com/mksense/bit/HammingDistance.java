@@ -1,5 +1,8 @@
 package com.mksense.bit;
 
+import java.beans.PropertyEditorSupport;
+import java.nio.file.SimpleFileVisitor;
+
 /**
  * The Hamming distance between two integers is the number of positions at which the corresponding bits are different.
  *
@@ -36,14 +39,13 @@ public class HammingDistance {
         String binaryY = Integer.toBinaryString(y);
         int step = binaryX.length() - binaryY.length();
         // make two number's binary array length equals
+        StringBuilder sb = new StringBuilder();
         if (step < 0) {
-            StringBuilder sb = new StringBuilder();
             for (int i = 0; i < -step; i++) {
                 sb.append(0);
             }
             binaryX = sb.append(binaryX).toString();
         } else {
-            StringBuilder sb = new StringBuilder();
             for (int i = 0; i < step; i++) {
                 sb.append(0);
             }
@@ -60,9 +62,32 @@ public class HammingDistance {
         return distance;
     }
 
+    public int hammingDistance2(final int x, final int y) {
+        int distance = 0;
+        for (int i = 31; i >= 0; i--) {
+            int mask = 1 << i;
+            int ex = (x & mask) == 0 ? 0 : 1;
+            int ey = (y & mask) == 0 ? 0 : 1;
+            if ((ex ^ ey) == 1) {
+                distance += 1;
+            }
+        }
+        return distance;
+    }
+
+    public int hammingDistance3(int x, int y) {
+        int distance = 0;
+        while (x != 0 || y != 0) {
+            distance += (x & 1) ^ (y & 1);
+            x >>= 1;
+            y >>= 1;
+        }
+        return distance;
+    }
+
     public static void main(String[] args) {
         HammingDistance solution = new HammingDistance();
-        System.out.println(solution.hammingDistance(4, 1));
+        System.out.println(solution.hammingDistance3(4, 1));
     }
 
 }
