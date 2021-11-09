@@ -30,10 +30,25 @@ package com.mksense.array.easy;
  */
 public class NumbersWithEvenDigits {
 
-    public int findNumbers(int[] nums) {
+    public int findNumbers1(int[] nums) {
         int even = 0;
-        for (int i = 0; i < nums.length; i++) {
-            if (Integer.valueOf(nums[i]).toString().length() % 2 == 0) {
+        for (int num : nums) {
+            if (String.valueOf(num).length() % 2 == 0) {
+                even++;
+            }
+        }
+        return even;
+    }
+
+    public int findNumbers(final int[] nums) {
+        int even = 0;
+        for(int num : nums) {
+            int len = 0;
+            while (num > 0) {
+                num /= 10;
+                len++;
+            }
+            if (len % 2 == 0) {
                 even++;
             }
         }
