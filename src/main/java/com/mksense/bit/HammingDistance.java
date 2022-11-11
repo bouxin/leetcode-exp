@@ -34,6 +34,11 @@ import java.nio.file.SimpleFileVisitor;
  */
 public class HammingDistance {
 
+    public static void main(String[] args) {
+        HammingDistance solution = new HammingDistance();
+        System.out.println(solution.hammingDistance3(4, 1));
+    }
+
     public int hammingDistance(final int x, final int y) {
         String binaryX = Integer.toBinaryString(x);
         String binaryY = Integer.toBinaryString(y);
@@ -83,11 +88,6 @@ public class HammingDistance {
             y >>= 1;
         }
         return distance;
-    }
-
-    public static void main(String[] args) {
-        HammingDistance solution = new HammingDistance();
-        System.out.println(solution.hammingDistance3(4, 1));
     }
 
 }

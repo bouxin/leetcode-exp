@@ -24,31 +24,41 @@ package com.mksense.array.easy;
  * <p>It doesn't matter what values are set beyond the returned length.
  *
  * @author lubosson
- * 
  * @since 2020-08-24
  */
 public class RemoveDuplicatesFromSortedArray {
+
+	public static void main(String[] args) {
+		RemoveDuplicatesFromSortedArray rdfsa = new RemoveDuplicatesFromSortedArray();
+		int[] nums = {0,0,1,1,1,2,2,3,3,4};
+		int[] expectedNums = {0,1,2,3,4,0,0,0,0,0};
+		
+		int k = rdfsa.removeDuplicates(nums);
+
+		for (int i = 0; i < k; i++) {
+			assert nums[i] == expectedNums[i];
+		}
+		System.out.println("bingo~");
+	}
 
 	public int removeDuplicates(int[] nums) {
 		if (nums.length == 0) {
 			return 0;
 		}
 
-		int position = 0;
-		int i = 0;
+		int pos = 0;
+		int cur = 0;
 
-		while (i < nums.length - 1) {
-			if (nums[position] != nums[++i]) {
-		  		position++;
-
-		  		if (position == i) {
+		while (cur < nums.length - 1) {
+			if (nums[pos] != nums[++cur]) {
+		  		if (++pos == cur) {
 		  			continue;
 		  		}
-		  		nums[position] = nums[i];
+		  		nums[pos] = nums[cur];
 		  	}
 		}
 
-		return position + 1;
+		return pos + 1;
 	}
 
 	public int removeDuplicates2(int[] nums) {
