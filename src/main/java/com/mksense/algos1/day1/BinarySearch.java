@@ -35,10 +35,27 @@ public class BinarySearch {
         int target = 9;
         int output = 4;
         BinarySearch bs = new BinarySearch();
+        System.out.println(bs.binarySearch(nums, target));
         assert output == bs.binarySearch(nums, target);
     }
 
     public int binarySearch(int[] nums, int target) {
+//        if (nums.length < 1 || nums.length > 104) return -1;
+//        if (target >= 104) return -1;
+        int lo = 0;int hi = nums.length - 1;
+
+        while (lo <= hi) {
+            int mid = lo + (hi - lo) / 2;
+
+            if (target < nums[mid]) {
+                hi = mid - 1;
+            } else if (target > nums[mid]) {
+                lo = mid + 1;
+            } else  {
+                return mid;
+            }
+        }
+
         return -1;
     }
 }
