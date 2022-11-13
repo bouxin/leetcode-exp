@@ -39,10 +39,10 @@ public class MoveZeros {
 
     public void moveZeros(int[] nums) {
         int pos = 0;
-        int cur = 0;
+        int cur = 1;
 
         for (int i = 0; i < nums.length; i++) {
-            
+
         }
     }
 }

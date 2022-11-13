@@ -48,7 +48,19 @@ public class SquaresOfSortedArray {
     }
 
     public int[] sortedSquares(int[] nums) {
+        int pos = 0;
+        int cur = nums.length - 1;
+        int[] res = new int[nums.length];
+        for (int i = cur; i >= 0; i--) {
+            if (Math.abs(nums[pos]) > Math.abs(nums[cur])) {
+                res[i] = nums[pos] * nums[pos];
+                pos++;
+            } else {
+                res[i] = nums[cur] * nums[cur];
+                cur--;
+            }
+        }
 
-        return nums;
+        return res;
     }
 }
