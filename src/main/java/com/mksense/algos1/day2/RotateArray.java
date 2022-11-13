@@ -1,5 +1,7 @@
 package com.mksense.algos1.day2;
 
+import java.util.Arrays;
+
 /**
  * Given an array, rotate the array to the right by k steps, where k is non-negative.
  *
@@ -34,4 +36,39 @@ package com.mksense.algos1.day2;
  * @since 1.0
  */
 public class RotateArray {
+    public static void main(String[] args) {
+        int[] nums = {1,2};
+        int k = 2;
+        RotateArray ra = new RotateArray();
+        ra.rotate(nums, k);
+        System.out.println(Arrays.toString(nums));
+        System.out.println(2%2);
+    }
+
+    public void rotate(int[] nums, int k) {
+        if (nums.length == 1) return;
+
+        if (k >= nums.length) {
+            k = k % nums.length;
+        }
+
+        if (k == 0) return;
+
+        int cur = nums.length - 1;
+        int[] res = new int[nums.length];
+
+        if (k > nums.length) {
+            k = k % nums.length;
+        }
+
+        int l = k;
+        for (int i = 0; i < nums.length - l; i++) {
+            if (k > 0) {
+                res[--k] = nums[cur--];
+            }
+            res[l + i] = nums[i];
+        }
+
+        System.arraycopy(res, 0, nums, 0, res.length);
+    }
 }
