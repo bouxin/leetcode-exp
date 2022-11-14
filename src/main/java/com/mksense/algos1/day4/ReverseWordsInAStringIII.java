@@ -30,6 +30,7 @@ public class ReverseWordsInAStringIII {
         String s = "Let's go to West Lake";
         ReverseWordsInAStringIII rwisiii = new ReverseWordsInAStringIII();
         System.out.println(rwisiii.reverseWords1(s));
+        System.out.println(rwisiii.reverseWords(s));
     }
 
     public String reverseWords(String s) {
@@ -49,41 +50,32 @@ public class ReverseWordsInAStringIII {
         int buf = 0;
         int offset = 0;
 
-        for (int i = 0; i < chs.length; i++) {
-            if (chs[i] != ' ') {
-                buf++;
-            } else if (buf > 0) {
-                int pos = offset;
-                int end = offset + buf - 1;
-
-                while (pos < end) {
-                    char t = chs[pos];
-                    chs[pos] = chs[end];
-                    chs[end] = t;
-                    pos++;
-                    end--;
-                }
-
+        for (char ch : chs) {
+            if (ch == ' ' && buf > 0) {
+                rev(offset, offset + buf - 1, chs);
                 offset += (buf + 1);
                 buf = 0;
+            } else {
+                buf++;
             }
         }
 
         // last word
         if (buf > 0) {
-            int pos = offset;
-            int end = offset + buf - 1;
-
-            while (pos < end) {
-                char t = chs[pos];
-                chs[pos] = chs[end];
-                chs[end] = t;
-                pos++;
-                end--;
-            }
+            rev(offset, offset + buf - 1, chs);
         }
 
         return String.valueOf(chs);
+    }
+
+    public void rev(int pos, int end, char[] chs) {
+        while (pos < end) {
+            char t = chs[pos];
+            chs[pos] = chs[end];
+            chs[end] = t;
+            pos++;
+            end--;
+        }
     }
 
 
