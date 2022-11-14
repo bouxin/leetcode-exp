@@ -29,7 +29,7 @@ public class ReverseWordsInAStringIII {
     public static void main(String[] args) {
         String s = "Let's go to West Lake";
         ReverseWordsInAStringIII rwisiii = new ReverseWordsInAStringIII();
-        System.out.println(rwisiii.reverseWords(s));
+        System.out.println(rwisiii.reverseWords1(s));
     }
 
     public String reverseWords(String s) {
@@ -43,6 +43,49 @@ public class ReverseWordsInAStringIII {
 
         return sb.substring(1);
     }
+
+    public String reverseWords1(String s) {
+        char[] chs = s.toCharArray();
+        int buf = 0;
+        int offset = 0;
+
+        for (int i = 0; i < chs.length; i++) {
+            if (chs[i] != ' ') {
+                buf++;
+            } else if (buf > 0) {
+                int pos = offset;
+                int end = offset + buf - 1;
+
+                while (pos < end) {
+                    char t = chs[pos];
+                    chs[pos] = chs[end];
+                    chs[end] = t;
+                    pos++;
+                    end--;
+                }
+
+                offset += (buf + 1);
+                buf = 0;
+            }
+        }
+
+        // last word
+        if (buf > 0) {
+            int pos = offset;
+            int end = offset + buf - 1;
+
+            while (pos < end) {
+                char t = chs[pos];
+                chs[pos] = chs[end];
+                chs[end] = t;
+                pos++;
+                end--;
+            }
+        }
+
+        return String.valueOf(chs);
+    }
+
 
     public String reverse(String s) {
         char[] chs = s.toCharArray();
