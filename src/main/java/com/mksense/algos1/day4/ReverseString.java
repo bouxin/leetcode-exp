@@ -1,6 +1,5 @@
 package com.mksense.algos1.day4;
 
-import com.sun.org.apache.xpath.internal.operations.String;
 
 import java.util.Arrays;
 
@@ -22,7 +21,7 @@ import java.util.Arrays;
  *
  * <p>
  * Constraints:
- *      1 <= s.length <= 105
+ *      1 <= s.length <= 10^5
  *      s[i] is a printable ascii character.
  */
 public class ReverseString {
