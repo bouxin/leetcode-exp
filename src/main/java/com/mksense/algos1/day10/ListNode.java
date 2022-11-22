@@ -15,6 +15,23 @@ public class ListNode {
         this.next = next;
     }
 
+    public static ListNode create(int[] elements) {
+        ListNode head = new ListNode(elements[0], null);
+        ListNode e, p = head;
+
+        for (int i = 1; i < elements.length; i++) {
+            for (;;) {
+                if ((e = p.next) == null) {
+                    p.next = new ListNode(elements[i], null);
+                    break;
+                } else {
+                    p = e;
+                }
+            }
+        }
+
+        return head;
+    }
 
     public String toString() {
         StringJoiner joiner = new StringJoiner(",", "[", "]");
