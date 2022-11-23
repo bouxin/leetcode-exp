@@ -1,8 +1,5 @@
 package com.mksense.algos1.day10;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Objects;
 import java.util.Stack;
 
 /**
